@@ -1,10 +1,8 @@
 name: Pull Request By Label
 on:
-  pull_request:
+  label:
     types: 
       - labeled
-    branches:
-      - main
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,4 +10,4 @@ jobs:
       - name: Checkout gethub
         uses: actions/checkout@v2
       - name: Payload
-        run: echo "${{toJSON(github.event.pull_request.labels)}}"
+        run: echo ${{toJSON(github.event.pull_request.labels)}}
