@@ -12,5 +12,5 @@ jobs:
       - name: Checkout gethub
         uses: actions/checkout@v2
       - name: Payload
-        env : { EVENT : "${{ toJSON(github.event }}" }
+        env : { EVENT : "${{ toJSON(github.event) }}" }
         run: "echo $EVENT"
