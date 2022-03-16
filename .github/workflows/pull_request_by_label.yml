@@ -14,3 +14,9 @@ jobs:
       - name: Payload
         env : { EVENT : "${{ toJSON(github.event) }}" }
         run: "echo $EVENT"
+      - name: Test
+        if: ${{ github.event.label.name == 'ready to test'}}
+      - name: Review
+        if: ${{ github.event.label.name == 'ready to review'}}
+      - name: Approve
+        if: ${{ github.event.label.name == 'approve'}}
