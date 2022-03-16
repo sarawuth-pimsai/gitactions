@@ -12,4 +12,4 @@ jobs:
       - name: Checkout gethub
         uses: actions/checkout@v2
       - name: Payload
-        run: ${{toJSON(github.event.pull_request)}}
+        run: echo "${{toJSON(github.event.pull_request.labels)}}"
