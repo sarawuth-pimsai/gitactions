@@ -16,13 +16,16 @@ jobs:
         run: "echo $EVENT"
       - name: Test
         run: "echo Test"
-        if: ${{ github.event.label.name == 'ready to test'}}
+        if: ${{ github.event.label.name == 'ready to test' }}
+      - name: Merge
+        run: "echo ready to merge"
+        if: ${{ github.event.label.name == 'ready to merge' }}
       - name: Review
         run: "echo Review"
         if: ${{ github.event.label.name == 'ready to review'}}
       - name: Approve
         run: "echo Approve"
-        if: ${{ github.event.label.name == 'approve'}}
+        if: ${{ github.event.label.name == 'approve from manager'}}
       - name: Preview
         run: "echo Preview"
         if: ${{ github.event.label.name == 'ready to preview'}}
