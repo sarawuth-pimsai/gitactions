@@ -1,9 +1,8 @@
 name: Pull Request
 
 on:
-  branches:
-    - main
   pull_request:
+    branches: [main]
     types: [labeled]
 jobs:
   build:
