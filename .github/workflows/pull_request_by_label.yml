@@ -15,8 +15,17 @@ jobs:
         env : { EVENT : "${{ toJSON(github.event) }}" }
         run: "echo $EVENT"
       - name: Test
+        run: "echo Test"
         if: ${{ github.event.label.name == 'ready to test'}}
       - name: Review
+        run: "echo Review"
         if: ${{ github.event.label.name == 'ready to review'}}
       - name: Approve
+        run: "echo Approve"
         if: ${{ github.event.label.name == 'approve'}}
+      - name: Preview
+        run: "echo Preview"
+        if: ${{ github.event.label.name == 'ready to preview'}}
+      - name: Deploy
+        run: "echo Deploy"
+        if: ${{ github.event.label.name == 'ready to deploy'}}
