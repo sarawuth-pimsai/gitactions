@@ -1,8 +1,10 @@
 name: Pull Request By Label
 on:
-  label:
+  pull_request:
+    branches:
+      - main
     types: 
-      - created
+      - labeled
 jobs:
   build:
     runs-on: ubuntu-latest
